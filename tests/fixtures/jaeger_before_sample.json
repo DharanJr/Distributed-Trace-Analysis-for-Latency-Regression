@@ -1,0 +1,32 @@
+{
+  "data": [
+    {
+      "traceID": "abc123",
+      "spans": [
+        {
+          "traceID": "abc123", "spanID": "s1", "operationName": "HTTP GET /api/checkout",
+          "startTime": 1700000000000000, "duration": 120000,
+          "processID": "p1", "references": [],
+          "tags": [{"key": "http.status_code", "value": "200"}]
+        },
+        {
+          "traceID": "abc123", "spanID": "s2", "operationName": "grpc.CheckoutService/PlaceOrder",
+          "startTime": 1700000000005000, "duration": 90000,
+          "processID": "p2", "references": [{"refType": "CHILD_OF", "spanID": "s1"}],
+          "tags": [{"key": "otel.status_code", "value": "OK"}]
+        },
+        {
+          "traceID": "abc123", "spanID": "s3", "operationName": "grpc.RecommendationService/ListRecommendations",
+          "startTime": 1700000000010000, "duration": 30000,
+          "processID": "p3", "references": [{"refType": "CHILD_OF", "spanID": "s2"}],
+          "tags": []
+        }
+      ],
+      "processes": {
+        "p1": {"serviceName": "frontend", "tags": []},
+        "p2": {"serviceName": "checkoutservice", "tags": []},
+        "p3": {"serviceName": "recommendationservice", "tags": []}
+      }
+    }
+  ]
+}

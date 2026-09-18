@@ -1,0 +1,344 @@
+{
+  "quality": {
+    "total_traces": 11000,
+    "total_spans": 41000,
+    "orphan_count": 30,
+    "root_missing_count": 0,
+    "orphan_rate": 0.0007317073170731707
+  },
+  "service_stats": {
+    "api-gateway": {
+      "call_count": 5000,
+      "mean_ms": 271.100410704,
+      "p95_ms": 598.6427329500001,
+      "p99_ms": 749.5479748900002,
+      "error_rate": 0.0
+    },
+    "order-service": {
+      "call_count": 5000,
+      "mean_ms": 265.114541159,
+      "p95_ms": 592.1441552000003,
+      "p99_ms": 743.5378671800003,
+      "error_rate": 0.0
+    },
+    "inventory-service": {
+      "call_count": 5000,
+      "mean_ms": 253.9439285532,
+      "p95_ms": 581.4264616500001,
+      "p99_ms": 733.3970031499999,
+      "error_rate": 0.0
+    },
+    "recommendation-service": {
+      "call_count": 5000,
+      "mean_ms": 26.264983236999996,
+      "p95_ms": 43.557698099999996,
+      "p99_ms": 55.50859392000002,
+      "error_rate": 0.009
+    },
+    "payment-service": {
+      "call_count": 5000,
+      "mean_ms": 46.710925663199994,
+      "p95_ms": 72.9325213,
+      "p99_ms": 87.92681536000005,
+      "error_rate": 0.0098
+    },
+    "product-service": {
+      "call_count": 5000,
+      "mean_ms": 20.6610113908,
+      "p95_ms": 32.5436317,
+      "p99_ms": 40.001626200000004,
+      "error_rate": 0.0092
+    },
+    "database-service": {
+      "call_count": 5000,
+      "mean_ms": 227.86547057159999,
+      "p95_ms": 556.6590186000001,
+      "p99_ms": 709.72155948,
+      "error_rate": 0.0186
+    },
+    "shipping-service": {
+      "call_count": 1224,
+      "mean_ms": 18.543969654411764,
+      "p95_ms": 28.91509209999999,
+      "p99_ms": 36.16230763,
+      "error_rate": 0.008986928104575163
+    },
+    "user-service": {
+      "call_count": 1224,
+      "mean_ms": 15.286784081699347,
+      "p95_ms": 23.860755849999993,
+      "p99_ms": 32.38533397999999,
+      "error_rate": 0.015522875816993464
+    },
+    "auth-service": {
+      "call_count": 1198,
+      "mean_ms": 8.158904615191986,
+      "p95_ms": 11.944869299999993,
+      "p99_ms": 14.369694269999998,
+      "error_rate": 0.009181969949916527
+    },
+    "notification-service": {
+      "call_count": 1181,
+      "mean_ms": 32.67125701947502,
+      "p95_ms": 59.744767,
+      "p99_ms": 78.12902400000004,
+      "error_rate": 0.015241320914479255
+    },
+    "cart-service": {
+      "call_count": 1173,
+      "mean_ms": 12.328139726342712,
+      "p95_ms": 19.6947638,
+      "p99_ms": 23.599762079999987,
+      "error_rate": 0.00937766410912191
+    }
+  },
+  "regression": [
+    {
+      "service": "database-service",
+      "operation": "inventory_lookup",
+      "before_count": 2452,
+      "after_count": 2455,
+      "before_p50": 79.57,
+      "before_p95": 143.67,
+      "before_p99": 184.27,
+      "after_p50": 355.45,
+      "after_p95": 634.51,
+      "after_p99": 779.07,
+      "change_pct": 322.8,
+      "p_value": 0.0,
+      "adjusted_p_value": 0.0,
+      "statistically_significant": true,
+      "regression": true
+    },
+    {
+      "service": "inventory-service",
+      "operation": "check_inventory",
+      "before_count": 2506,
+      "after_count": 2494,
+      "before_p50": 104.76,
+      "before_p95": 169.45,
+      "before_p99": 213.99,
+      "after_p50": 378.84,
+      "after_p95": 662.14,
+      "after_p99": 801.23,
+      "change_pct": 274.4,
+      "p_value": 0.0,
+      "adjusted_p_value": 0.0,
+      "statistically_significant": true,
+      "regression": true
+    },
+    {
+      "service": "order-service",
+      "operation": "process_order",
+      "before_count": 2506,
+      "after_count": 2494,
+      "before_p50": 115.99,
+      "before_p95": 180.61,
+      "before_p99": 225.4,
+      "after_p50": 390.16,
+      "after_p95": 671.83,
+      "after_p99": 812.81,
+      "change_pct": 260.6,
+      "p_value": 0.0,
+      "adjusted_p_value": 0.0,
+      "statistically_significant": true,
+      "regression": true
+    },
+    {
+      "service": "api-gateway",
+      "operation": "checkout",
+      "before_count": 2506,
+      "after_count": 2494,
+      "before_p50": 121.75,
+      "before_p95": 186.92,
+      "before_p99": 230.8,
+      "after_p50": 395.99,
+      "after_p95": 677.37,
+      "after_p99": 819.07,
+      "change_pct": 254.9,
+      "p_value": 0.0,
+      "adjusted_p_value": 0.0,
+      "statistically_significant": true,
+      "regression": true
+    },
+    {
+      "service": "cart-service",
+      "operation": "get_cart",
+      "before_count": 586,
+      "after_count": 576,
+      "before_p50": 11.8,
+      "before_p95": 19.42,
+      "before_p99": 22.44,
+      "after_p50": 11.86,
+      "after_p95": 19.98,
+      "after_p99": 24.96,
+      "change_pct": 11.2,
+      "p_value": 0.6738082275,
+      "adjusted_p_value": 0.80857,
+      "statistically_significant": false,
+      "regression": false
+    },
+    {
+      "service": "shipping-service",
+      "operation": "estimate_shipping",
+      "before_count": 621,
+      "after_count": 592,
+      "before_p50": 17.9,
+      "before_p95": 29.73,
+      "before_p99": 35.44,
+      "after_p50": 17.42,
+      "after_p95": 27.85,
+      "after_p99": 38.95,
+      "change_pct": 9.9,
+      "p_value": 0.437067847,
+      "adjusted_p_value": 0.64131,
+      "statistically_significant": false,
+      "regression": false
+    },
+    {
+      "service": "product-service",
+      "operation": "get_product_details",
+      "before_count": 2486,
+      "after_count": 2468,
+      "before_p50": 19.88,
+      "before_p95": 32.37,
+      "before_p99": 39.7,
+      "after_p50": 19.81,
+      "after_p95": 32.73,
+      "after_p99": 40.35,
+      "change_pct": 1.6,
+      "p_value": 0.9713852418,
+      "adjusted_p_value": 0.97139,
+      "statistically_significant": false,
+      "regression": false
+    },
+    {
+      "service": "recommendation-service",
+      "operation": "get_recommendations",
+      "before_count": 2484,
+      "after_count": 2471,
+      "before_p50": 25.02,
+      "before_p95": 43.83,
+      "before_p99": 55.66,
+      "after_p50": 24.92,
+      "after_p95": 43.45,
+      "after_p99": 55.39,
+      "change_pct": -0.5,
+      "p_value": 0.8302542645,
+      "adjusted_p_value": 0.90573,
+      "statistically_significant": false,
+      "regression": false
+    },
+    {
+      "service": "auth-service",
+      "operation": "verify_token",
+      "before_count": 577,
+      "after_count": 610,
+      "before_p50": 7.98,
+      "before_p95": 11.59,
+      "before_p99": 14.68,
+      "after_p50": 7.98,
+      "after_p95": 12.31,
+      "after_p99": 14.2,
+      "change_pct": -3.3,
+      "p_value": 0.2959526225,
+      "adjusted_p_value": 0.59191,
+      "statistically_significant": false,
+      "regression": false
+    },
+    {
+      "service": "notification-service",
+      "operation": "send_email",
+      "before_count": 586,
+      "after_count": 577,
+      "before_p50": 30.98,
+      "before_p95": 61.46,
+      "before_p99": 78.56,
+      "after_p50": 29.13,
+      "after_p95": 57.96,
+      "after_p99": 73.99,
+      "change_pct": -5.8,
+      "p_value": 0.0405646488,
+      "adjusted_p_value": 0.09736,
+      "statistically_significant": false,
+      "regression": false
+    },
+    {
+      "service": "payment-service",
+      "operation": "charge_payment",
+      "before_count": 2486,
+      "after_count": 2465,
+      "before_p50": 44.88,
+      "before_p95": 73.92,
+      "before_p99": 91.31,
+      "after_p50": 44.96,
+      "after_p95": 72.32,
+      "after_p99": 85.77,
+      "change_pct": -6.1,
+      "p_value": 0.4223281302,
+      "adjusted_p_value": 0.64131,
+      "statistically_significant": false,
+      "regression": false
+    },
+    {
+      "service": "user-service",
+      "operation": "get_profile",
+      "before_count": 599,
+      "after_count": 606,
+      "before_p50": 14.77,
+      "before_p95": 24.02,
+      "before_p99": 32.82,
+      "after_p50": 14.62,
+      "after_p95": 23.6,
+      "after_p99": 29.69,
+      "change_pct": -9.5,
+      "p_value": 0.4809811829,
+      "adjusted_p_value": 0.64131,
+      "statistically_significant": false,
+      "regression": false
+    }
+  ],
+  "attribution": {
+    "root_cause_candidate": "database-service",
+    "operation": "inventory_lookup",
+    "before_p99_ms": 184.3,
+    "after_p99_ms": 779.1,
+    "change_pct": 322.8,
+    "adjusted_p_value": 0.0,
+    "evidence": [
+      "database-service/inventory_lookup P99 increased from 184ms to 779ms (323% increase).",
+      "Distribution shift is statistically significant after FDR correction (adjusted p=0.0000).",
+      "database-service/inventory_lookup appears on the critical path in 45% of sampled AFTER-period traces.",
+      "inventory-service (the direct caller of database-service) has an average self-time ratio of only 4% of its own span duration, indicating it mostly waits on database-service rather than doing its own slow work.",
+      "inventory-service v2.4.1 was deployed and temporally coincides with the regression onset."
+    ],
+    "chain": [
+      "api-gateway",
+      "order-service",
+      "inventory-service",
+      "database-service"
+    ],
+    "on_path_rate": 0.453,
+    "upstream_service": "inventory-service",
+    "upstream_self_time_ratio": 0.035,
+    "has_deploy_evidence": true
+  },
+  "evidence": {
+    "root_cause_candidate": "database-service",
+    "operation": "inventory_lookup",
+    "evidence": [
+      "database-service/inventory_lookup P99 increased from 184ms to 779ms (323% increase).",
+      "Distribution shift is statistically significant after FDR correction (adjusted p=0.0000).",
+      "database-service/inventory_lookup appears on the critical path in 45% of sampled AFTER-period traces.",
+      "inventory-service (the direct caller of database-service) has an average self-time ratio of only 4% of its own span duration, indicating it mostly waits on database-service rather than doing its own slow work.",
+      "inventory-service v2.4.1 was deployed and temporally coincides with the regression onset."
+    ],
+    "chain": [
+      "api-gateway",
+      "order-service",
+      "inventory-service",
+      "database-service"
+    ],
+    "confidence": "MEDIUM"
+  }
+}
